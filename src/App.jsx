@@ -10,7 +10,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 const App = () => {
   const [messages, setMessages] = useState([
@@ -37,6 +37,7 @@ const App = () => {
 
     try {
       const response = await processMessageToChatGPT([...messages, newMessage]);
+      console.log(response);
       const content = response.choices[0]?.message?.content;
       if (content) {
         const chatGPTResponse = {
